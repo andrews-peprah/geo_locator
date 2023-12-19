@@ -39,7 +39,7 @@ module GeoLocator
           exactly_one_of :ip, :url
         end
 
-        get ':id' do
+        get do
           GeoLocationServices::GetResource.call(params)
         end
 
@@ -55,7 +55,7 @@ module GeoLocator
 
         params do
           optional :ip, type: String, desc: 'IP Address'
-          requires :url, type: String, desc: 'URL'
+          optional :url, type: String, desc: 'URL'
           exactly_one_of :ip, :url
         end
 
