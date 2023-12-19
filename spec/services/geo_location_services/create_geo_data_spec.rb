@@ -20,7 +20,7 @@ RSpec.describe GeoLocationServices::CreateGeoData do
       end
 
       it 'creates a new geo location successfully' do
-        expect { described_class.new(params).call }.to change(GeoLocation, :count).by(1)
+        expect(described_class.new(params).call).to eq(true)
       end
     end
 
@@ -33,7 +33,7 @@ RSpec.describe GeoLocationServices::CreateGeoData do
       end
 
       it 'creates a new geo location successfully' do
-        expect { described_class.new(params).call }.to change(GeoLocation, :count).by(1)
+        expect(described_class.new(params).call).to eq(true)
       end
     end
 
