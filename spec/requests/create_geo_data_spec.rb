@@ -7,7 +7,7 @@ RSpec.describe 'CreateGeoData', type: :request do
   describe 'POST /api/v1/geo_location' do
     let(:request_url) { '/api/v1/geo_location' }
     let(:ip_address) { '192.168.3.3' }
-    let(:url) { 'https://www.google.com' }
+    let(:url) { 'www.google.com' }
     context 'when ip address is passed' do
 
       let(:params) do
@@ -24,6 +24,20 @@ RSpec.describe 'CreateGeoData', type: :request do
     end
 
     context 'when url is passed' do
+      let(:params) do
+        {
+          type: 'url',
+          value: url
+        }
+      end
+
+      it 'returns a successful response' do
+        post request_url, params: params
+        expect(response).to have_http_status(:success)
+      end
+    end
+
+    context 'when url with protocol is passed' do
       let(:url) { 'https://www.google.com' }
       let(:params) do
         {
@@ -35,7 +49,6 @@ RSpec.describe 'CreateGeoData', type: :request do
       it 'returns a successful response' do
         post request_url, params: params
         expect(response).to have_http_status(:success)
-
       end
     end
 

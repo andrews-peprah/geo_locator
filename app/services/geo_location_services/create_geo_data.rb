@@ -12,9 +12,10 @@ module GeoLocationServices
       return unless valid?
 
       find_resource
-      return if resource.nil?
+      return false if resource.nil?
 
       create_geo_location(::GeoDataClient.get_location(resource_value))
+      true
     end
 
     private
@@ -38,7 +39,7 @@ module GeoLocationServices
     end
 
     def create_geo_location(data)
-      return if data.blank? || data[:latitude].blank? || data[:longitude].blank?
+      return if data.values.any?(&:nil?)
 
       attrs = {
         city: data[:city],

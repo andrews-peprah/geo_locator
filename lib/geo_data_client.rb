@@ -12,7 +12,6 @@ class GeoDataClient
       raise "Error getting location data for #{resource}"
     end
 
-    pp response
     data = JSON.parse(response.body)
     {
       city: data['city'],

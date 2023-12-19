@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.ipstack.com/68.163.76.226?access_key=ad54d9a3666cfa23b77978a77b2b70ad
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 19 Dec 2023 21:34:42 GMT
+      X-Apilayer-Transaction-Id:
+      - 5c17d099-f3c9-42dc-b1b9-cf6f3db043e8
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '1000'
+      X-Quota-Remaining:
+      - '825'
+      X-Increment-Usage:
+      - '1'
+      X-Request-Time:
+      - '0.025'
+    body:
+      encoding: UTF-8
+      string: '{"ip": "68.163.76.226", "type": "ipv4", "continent_code": "NA", "continent_name":
+        "North America", "country_code": "US", "country_name": "United States", "region_code":
+        "DC", "region_name": "Washington", "city": "Washington", "zip": "22214", "latitude":
+        38.878700256347656, "longitude": -77.1155014038086, "location": {"geoname_id":
+        4140963, "capital": "Washington D.C.", "languages": [{"code": "en", "name":
+        "English", "native": "English"}], "country_flag": "https://assets.ipstack.com/flags/us.svg",
+        "country_flag_emoji": "\ud83c\uddfa\ud83c\uddf8", "country_flag_emoji_unicode":
+        "U+1F1FA U+1F1F8", "calling_code": "1", "is_eu": false}}'
+  recorded_at: Tue, 19 Dec 2023 21:34:42 GMT
+recorded_with: VCR 6.2.0

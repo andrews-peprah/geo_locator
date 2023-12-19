@@ -31,7 +31,7 @@ module GeoLocationServices
     end
 
     def create_url_resource
-      validate_url
+      validate_domain
       @resource = UrlResource.create!(url: value)
     end
 
@@ -39,8 +39,10 @@ module GeoLocationServices
       raise 'Invalid IP Address' unless value =~ Resolv::IPv4::Regex || value =~ Resolv::IPv6::Regex
     end
 
-    def validate_url
-      raise 'Invalid URL' unless value =~ URI::DEFAULT_PARSER.make_regexp
+    def validate_domain
+      @value = value.gsub(/(https?:\/\/)/, '')
+      regex = /^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/
+      raise 'Invalid url' unless regex.match?(value)
     end
   end
 end

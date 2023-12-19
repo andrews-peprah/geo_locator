@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.ipstack.com/31.93.34.111?access_key=ad54d9a3666cfa23b77978a77b2b70ad
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 19 Dec 2023 21:34:46 GMT
+      X-Apilayer-Transaction-Id:
+      - 375984e3-dede-430e-8255-57208507dbaf
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '1000'
+      X-Quota-Remaining:
+      - '824'
+      X-Increment-Usage:
+      - '1'
+      X-Request-Time:
+      - '0.025'
+    body:
+      encoding: UTF-8
+      string: '{"ip": "31.93.34.111", "type": "ipv4", "continent_code": "EU", "continent_name":
+        "Europe", "country_code": "GB", "country_name": "United Kingdom", "region_code":
+        "ENG", "region_name": "England", "city": "Brockley", "zip": "SE22", "latitude":
+        51.45777893066406, "longitude": -0.08556000143289566, "location": {"geoname_id":
+        11551040, "capital": "London", "languages": [{"code": "en", "name": "English",
+        "native": "English"}], "country_flag": "https://assets.ipstack.com/flags/gb.svg",
+        "country_flag_emoji": "\ud83c\uddec\ud83c\udde7", "country_flag_emoji_unicode":
+        "U+1F1EC U+1F1E7", "calling_code": "44", "is_eu": true}}'
+  recorded_at: Tue, 19 Dec 2023 21:34:46 GMT
+recorded_with: VCR 6.2.0
