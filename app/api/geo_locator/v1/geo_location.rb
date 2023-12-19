@@ -15,7 +15,7 @@ module GeoLocator
         params do
           optional :ip, type: String, desc: 'IP Address'
           optional :url, type: String, desc: 'URL'
-          mutually_exclusive :ip, :url
+          exactly_one_of :ip, :url
         end
 
         # http://localhost:5000/api/v1/geo_location
@@ -36,10 +36,10 @@ module GeoLocator
         params do
           optional :ip, type: String, desc: 'IP Address'
           optional :url, type: String, desc: 'URL'
-          mutually_exclusive :ip, :url
+          exactly_one_of :ip, :url
         end
 
-        get do
+        get ':id' do
         end
 
         # http://localhost:5000/api/v1/geo_location?url=
@@ -54,8 +54,8 @@ module GeoLocator
 
         params do
           optional :ip, type: String, desc: 'IP Address'
-          optional :url, type: String, desc: 'URL'
-          mutually_exclusive :ip, :url
+          requires :url, type: String, desc: 'URL'
+          exactly_one_of :ip, :url
         end
 
         delete do

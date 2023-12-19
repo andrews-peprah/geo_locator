@@ -1,6 +1,6 @@
 # Create class for create geo location service
 module GeoLocationServices
-  class CreateIpService < BaseService
+  class CreateIp < BaseService
     def initialize(params)
       @params = params
     end
