@@ -38,7 +38,7 @@ module GeoLocationServices
     end
 
     def create_geo_location(data)
-      raise 'Invalid geo data' if data.blank?
+      return if data.blank? || data[:latitude].blank? || data[:longitude].blank?
 
       attrs = {
         city: data[:city],
