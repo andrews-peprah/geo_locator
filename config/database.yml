@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  min_messages: WARNING
+  
+dev_default: &dev_default
+  <<: *default
+  username: <%= ENV.fetch("DB_USERNAME") { 5 } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { 5 } %>
+  host: <%= ENV.fetch("DB_HOST") { 'localhost' } %>
+
+development:
+  <<: *dev_default
+  database: geo_locator_dev
+
+test:
+  <<: *dev_default
+  database: geo_locator_test
+
+production:
+  <<: *default
+  url: <%= ENV.fetch("DATABASE_URL") { '' } %>

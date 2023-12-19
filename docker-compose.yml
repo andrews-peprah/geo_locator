@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+  database:
+    image: postgres
+    user: root
+    env_file:
+      - .env.docker
+    volumes:
+      - ./../volumes/geo_locator/database:/var/lib/postgresql/data
+  cache:
+    image: redis:6.2-alpine
+    user: root
+    env_file:
+      - .env.docker
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass 23898uaefojisdkjfl23F328fj298383
+    volumes:
+      - ./../cache/geo_locator:/data
+  web:
+    build:
+      context: .
+      dockerfile: .docker/ror/Dockerfile
+    env_file:
+      - .env.docker
+    volumes:
+      - ./:/ror
+    ports:
+      - '5000:5000'
+    depends_on:
+      - database
+      - cache

@@ -1,0 +1,11 @@
+:concurrency: 10
+:pidfile: ./tmp/pids/sidekiq.pid
+
+:queues:
+  - critical
+  - default
+  - low
+
+:redis:
+  :url: <%= ENV['REDIS_URL'] %>
+  :namespace: geo_locator
