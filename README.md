@@ -90,14 +90,14 @@ Swagger Version: 2.0
   - **Tags**: geo_location
 
 - **POST**
-  - **Description**: Returns the geo location data based on ip address or url
+  - **Description**: Creates the geo location data based on ip address or url
   - **Produces**: application/json
   - **Consumes**: application/json
   - **Parameters**:
     - **type** (formData): Type (string, required, enum: [ip, url])
     - **value** (formData): Value (string, required)
   - **Responses**:
-    - **201**: Returns the geo location data based on ip address or url
+    - **201**: Creates the geo location data based on ip address or url
   - **OperationId**: postApiV1GeoLocation
   - **Deprecated**: false
   - **Tags**: geo_location

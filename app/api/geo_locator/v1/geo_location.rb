@@ -4,7 +4,7 @@ module GeoLocator
   module V1
     class GeoLocation < Grape::API
       resource :geo_location do
-        desc 'Returns the geo location data based on ip address or url' do
+        desc 'Creates the geo location data based on ip address or url' do
           hidden false
           deprecated false
           is_array false
