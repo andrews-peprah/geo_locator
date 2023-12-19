@@ -26,6 +26,8 @@ gem 'grape-swagger-rails'
 gem 'sidekiq'
 gem 'sidekiq-scheduler'
 
+gem 'resolv'
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec', '~> 3.10.0'

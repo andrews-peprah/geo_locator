@@ -13,14 +13,14 @@ module GeoLocator
         end
 
         params do
-          optional :ip, type: String, desc: 'IP Address'
-          optional :url, type: String, desc: 'URL'
-          exactly_one_of :ip, :url
+          requires :type, type: String, desc: 'Type', values: %w[ip url]
+          requires :value, type: String, desc: 'Value'
         end
 
         # http://localhost:5000/api/v1/geo_location
         # http://localhost:5000/api/v1/geo_location.json
         post do
+          GeoLocationServices::CreateResource.call(params)
         end
 
         # http://localhost:5000/api/v1/geo_location?url=
@@ -40,6 +40,7 @@ module GeoLocator
         end
 
         get ':id' do
+          GeoLocationServices::GetResource.call(params)
         end
 
         # http://localhost:5000/api/v1/geo_location?url=
@@ -59,6 +60,7 @@ module GeoLocator
         end
 
         delete do
+          GeoLocationServices::DeleteResource.call(params)
         end
       end
     end

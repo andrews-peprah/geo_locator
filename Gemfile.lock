@@ -271,6 +271,7 @@ GEM
     regexp_parser (2.8.3)
     reline (0.4.1)
       io-console (~> 0.5)
+    resolv (0.3.0)
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.6)
@@ -388,6 +389,7 @@ DEPENDENCIES
   rack-timeout
   rails (~> 7.0.8)
   redis (~> 4.0)
+  resolv
   rspec (~> 3.10.0)
   rspec-rails (~> 5.1.0)
   shoulda-matchers
