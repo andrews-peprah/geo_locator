@@ -1,24 +1,29 @@
-# README
+# GEO LOCATOR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This service is to provide the geo location data for the given IP address or domain name.
 
-Things you may want to cover:
+# How to run the service
 
-* Ruby version
+## Prerequisites
 
-* System dependencies
+- Docker
+- Docker Compose
 
-* Configuration
+## Steps to run the service
 
-* Database creation
+- Clone the repository
+- Navigate to the root directory of the repository
+- Decrypt the .env file using the following command and the provided password
 
-* Database initialization
+```
+openssl aes-256-cbc -d -in .env.docker.enc -out .env.docker -k your_password -pbkdf2 -iter 10000
+```
 
-* How to run the test suite
+- Run the following command to start the service
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+docker compose up
+```
 
-* Deployment instructions
-
-* ...
+- The service will be running on port 5000
+- The swagger documentation can be accessed at http://localhost:5000/api/v1/swagger_doc
